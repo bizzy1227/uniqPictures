@@ -4,19 +4,19 @@ const Jimp = require('jimp');
 
 async function changeImage(pathImg) {
     let filename = pathImg;
-    await cahngeExif(filename);
+    // await cahngeExif(filename);
     await cahngePixelColor(filename);
     await renameFile(pathImg);
 
 }
 
-changeImage('1.jpg');
+changeImage('4.png');
 
 async function renameFile(pathImg) {
     let extractFormat = pathImg.match(/\.\w*/gm);
     console.log(extractFormat);
 
-    fs.rename(pathImg, 'random_img' + extractFormat, function(err) {
+    fs.rename(pathImg, '5' + extractFormat, function(err) {
         if ( err ) console.log('ERROR: ' + err);
     });
 }
@@ -27,7 +27,7 @@ async function cahngePixelColor(filename) {
     image.setPixelColor(15027215, 1, 1); // рандомизировать
     console.log('changed pixel color', image.getPixelColor(1, 1));
     // меняем вес фотографии
-    image.quality(90); // рандомизировать
+    image.quality(30); // рандомизировать
     image.write(filename);
 }
 
