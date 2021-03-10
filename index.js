@@ -6,9 +6,20 @@ async function changeImage(pathImg) {
     let filename = pathImg;
     await cahngeExif(filename);
     await cahngePixelColor(filename);
+    await renameFile(pathImg);
+
 }
 
-changeImage('origin_2.jpg');
+changeImage('1.jpg');
+
+async function renameFile(pathImg) {
+    let extractFormat = pathImg.match(/\.\w*/gm);
+    console.log(extractFormat);
+
+    fs.rename(pathImg, 'random_img' + extractFormat, function(err) {
+        if ( err ) console.log('ERROR: ' + err);
+    });
+}
 
 async function cahngePixelColor(filename) {
     const image = await Jimp.read(filename);
