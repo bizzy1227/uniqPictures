@@ -1,0 +1,22 @@
+{
+  "name": "uniqpictures",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bizzy1227/uniqPictures.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bizzy1227/uniqPictures/issues"
+  },
+  "homepage": "https://github.com/bizzy1227/uniqPictures#readme",
+  "dependencies": {
+    "modify-exif": "0.0.1"
+  }
+}
