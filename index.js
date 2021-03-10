@@ -4,7 +4,7 @@ const Jimp = require('jimp');
 
 async function changeImage(pathImg) {
     let filename = pathImg;
-    // await cahngeExif(filename);
+    // await changeExif(filename);
     await cahngePixelColor(filename);
     await renameFile(pathImg);
 
@@ -31,7 +31,7 @@ async function cahngePixelColor(filename) {
     image.write(filename);
 }
 
-async function cahngeExif(filename) {
+async function changeExif(filename) {
     var jpeg = fs.readFileSync(filename);
     var data = jpeg.toString("binary");
 
